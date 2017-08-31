@@ -33,6 +33,8 @@ sh get_dbs.sh<br />
 <br />
 sh mapping_DNA.sh <Sample_ID> <Reads_R1> <Reads_R2> <host_bowtie2_index> <Number_of_cores> <br />
 <br />
+Tipp: create index: bowtie2-build reference.fa reference.fa<br />
+<br />
 <Sample_ID>               Unique identifier for the sample<br />
 <Reads_R1>                Foreward read file<br />
 <Reads_R2>                Reversed read file<br />
@@ -40,6 +42,8 @@ sh mapping_DNA.sh <Sample_ID> <Reads_R1> <Reads_R2> <host_bowtie2_index> <Number
 <Number_of_cores>         number of parallel threads to run (int)<br />
 <br />
 sh mapping_RNA.sh <Sample_ID> <Reads_R1> <Reads_R2> <host_STAR_index> <Number_of_cores> <br />
+<br />
+Tipp: create index: STAR --runMode genomeGenerate --genomeDir "$working_dir"/star_index --genomeFastaFiles "$working_dir"/reference.fa --runThreadN 8<br />
 <br />
 <Sample_ID>               Unique identifier for the sample<br />
 <Reads_R1>                Foreward read file<br />
@@ -76,8 +80,6 @@ for i in 23871a<br />
 
 do<br />
 
-# Tipp: create index: bowtie2-build reference.fa reference.fa<br />
-
 sh /home/dwuethrich/Application/novel_virus_detection/mapping_DNA.sh "$i" ../reads_20150103/Project_Neurocenter_TS/Sample_"$i"/"$i"_*_R1_*.fastq.gz ../reads_20150103/Project_Neurocenter_TS/Sample_"$i"/"$i"_*_R2_*.fastq.gz ../mapping/reference_genome/Bos_taurus.UMD3.1.dna_sm.toplevel "$NSLOTS"<br />
 
 done<br />
@@ -89,8 +91,6 @@ module add UHTS/Aligner/STAR/2.3.0;<br />
 for i in 23871a<br />
 
 do<br />
-
-# Tipp: create index: STAR --runMode genomeGenerate --genomeDir "$working_dir"/star_index --genomeFastaFiles "$working_dir"/reference.fa --runThreadN 8<br />
 
 sh /home/dwuethrich/Application/novel_virus_detection/mapping_RNA.sh "$i" ../reads_20150103/Project_Neurocenter_TS/Sample_"$i"/"$i"_*_R1_*.fastq.gz ../reads_20150103/Project_Neurocenter_TS/Sample_"$i"/"$i"_*_R2_*.fastq.gz ../mapping_RNA/alignment/genome/start_index/ "$NSLOTS"<br />
 
