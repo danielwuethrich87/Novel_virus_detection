@@ -1,4 +1,4 @@
-Reference based virus detection
+Novel virus detection
 =======================
 
 This pipeline is searching for novel viruses based on protein alignment.<br />
@@ -10,7 +10,7 @@ step 1.2:mapping_RNA.sh: removal of host reads from RNA samples<br />
 step 2:metagenomic_assembly.sh: assembly of reads from metagnomics sample<br />
 step 3:novel_virus_identification.sh: searching for Virus domains in scaffolds<br />
 		-searching for Virus protein<br />
-		-comparing to nt database, to excluded false positiove<br />
+		-comparing to nt database, to excluded false positive<br />
 
 #Requirements:
 
@@ -20,7 +20,7 @@ step 3:novel_virus_identification.sh: searching for Virus domains in scaffolds<b
 -samtools (version 1.3)<br />
 -bowtie2 (version 2.3.0)<br />
 -STAR (version 2.3.0)<br />
--SPades (version 3.10.1)<br />
+-SPAdes (version 3.10.1)<br />
 
 #Installation:
 
