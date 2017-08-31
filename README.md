@@ -43,7 +43,7 @@ Tipp: create index: bowtie2-build reference.fa reference.fa<br />
 <br />
 sh mapping_RNA.sh <Sample_ID> <Reads_R1> <Reads_R2> <host_STAR_index> <Number_of_cores> <br />
 <br />
-Tipp: create index: STAR --runMode genomeGenerate --genomeDir "$working_dir"/star_index --genomeFastaFiles "$working_dir"/reference.fa --runThreadN 8<br />
+Tipp: create index: STAR --runMode genomeGenerate --genomeDir star_index --genomeFastaFiles reference.fa --runThreadN 8<br />
 <br />
 <Sample_ID>               Unique identifier for the sample<br />
 <Reads_R1>                Foreward read file<br />
